@@ -7,13 +7,8 @@
     },
     {
       "text": "GitHub",
-      "url": "https://github.com/hankchizljaw/hylia",
+      "url": "https://github.com/tinyexplosions",
       "external": true
-    },
-    {
-      "text": "Example Contact Page",
-      "url": "/contact",
-      "external": false
     }
   ]
 }

@@ -4,4 +4,7 @@
     text-decoration: none;
     color: var(--color-text);
   }
+  &__inner {
+  	flex: 6;
+	}
 }
