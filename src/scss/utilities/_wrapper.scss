@@ -1,8 +1,6 @@
-header .wrapper {
-	display: flex;
-}
-
 .wrapper {
+  display: flex;
+  align-items: center;
   max-width: map-get($metrics, 'wrap-max-width');
   margin-left: auto;
   margin-right: auto;

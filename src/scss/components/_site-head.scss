@@ -1,3 +1,4 @@
+
 .site-head {
   &__site-name {
     font-weight: 700;
@@ -5,6 +6,6 @@
     color: var(--color-text);
   }
   &__inner {
-  	flex: 6;
+  	flex: 1;
 	}
 }
