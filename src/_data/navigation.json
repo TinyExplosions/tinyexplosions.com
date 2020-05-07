@@ -14,11 +14,6 @@
       "text": "Site Setup",
       "url": "/setup",
       "external": false
-    },
-    {
-      "text": "GitHub",
-      "url": "https://github.com/tinyexplosions",
-      "external": true
     }
   ]
 }
