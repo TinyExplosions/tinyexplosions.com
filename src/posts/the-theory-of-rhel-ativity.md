@@ -51,6 +51,7 @@ subscription-manager repos --disable=*
 subscription-manager repos --enable=rhel-7-server-rpms
 subscription-manager repos --enable=rhel-7-server-extras-rpms
 subscription-manager repos --enable=rhel-7-server-optional-rpms
+yum update
 ```
 
 Then, on the advice of a friend, I installed Cockpit - a really nice, web based gui for administering servers - it will certainly make life a lot easier when getting started, and looks kinda pretty to, which doesn't hurt - who knew this stuff was available these days!
