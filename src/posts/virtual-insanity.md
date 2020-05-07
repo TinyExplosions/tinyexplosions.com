@@ -38,4 +38,6 @@ to get the iso into `/var/lib/libvirt/images`. Then I created some storage, a br
 
 ![Cockpit's create VM UI showing configuration of a virtual machine](/images/create-vm.png "UI for creating a VM (ignore the warning on installation source, that's to be sorted another day. Still works as it should though)")
 
+It's worth noting that the problems I had with RHEL 8 disappear under Libvirt - all connection to storage is taken care of, so I can run as many RHEL 8 VMs as I could possibly want, so that's a success!
+
 Once you start the VM, you'll see the standard install prompts for RHEL, which you can go through via the console in Cockpit. With that, we have a good base system, and an ability to spin up VMs at will, that bridge their network onto the lan, so we can ssh into them, leaving us one step closer to OpenShift. First though, we need Authentication.
