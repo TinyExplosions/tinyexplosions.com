@@ -19,15 +19,9 @@
     }
 
     a:not([class]) {
-      color: var(--color-dark);
-      position: relative;
-      display: inline-block;
-      background: var(--color-theme-highlight);
-      padding: 0.2rem 0.4rem 0.3rem 0.4rem;
+      color: var(--color-theme-highlight);
       text-decoration: none;
-      word-break: break-word;
-
-      @include apply-utility('leading', 'tight');
+      border-bottom: 1px solid var(--color-theme-highlight);
     }
 
     a:not([class]):hover {

@@ -19,7 +19,7 @@
   --color-theme-highlight: #{get-color('highlight')};
   --color-theme-highlight-block: #{get-color('slate')};
   --color-theme-feature-text: #{get-color('highlight')};
-  --logo-color: #ffffff;
+  --logo-color: var(--color-theme-highlight);
 
 }
 
@@ -37,7 +37,7 @@
   --color-theme-highlight: #{get-color('highlight')};
   --color-theme-highlight-block: #{get-color('slate')};
   --color-theme-feature-text: #{get-color('highlight')};
-  --logo-color: #ffffff;
+  --logo-color: var(--color-theme-highlight);
 }
 
 body {
