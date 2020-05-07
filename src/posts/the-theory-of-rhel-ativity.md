@@ -40,8 +40,8 @@ The first thing to do on any RHEL machine it seems is the good old Subscription 
 
 ```bash
 subscription-manager register
-subscription-manager --all --available
-subscription-manager attch --pool=<id>
+subscription-manager list --available --all
+subscription-manager attach --pool=<id>
 ```
 
 A quick refresh of all repos
