@@ -10,6 +10,20 @@
     &:hover {
       text-decoration: none;
     }
+
+    &:hover g {
+      stroke: var(--color-theme-primary);
+    }
+
+    &.footer-logo {
+      transition: 300ms ease all;
+      margin-right: 1em;
+    }
+
+    &.footer-logo:hover {
+      transform: rotate(30deg);
+    }
+
   }
 
   &__credit {
