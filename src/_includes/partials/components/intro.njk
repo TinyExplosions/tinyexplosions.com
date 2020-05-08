@@ -5,6 +5,8 @@
       <div class="[ intro__summary ] [ sf-flow ] [ leading-mid measure-short ]">{{ introSummary | safe }}</div>
     {% endif %}
     </div>
+    {% if introSummary %}
+    {% else %}
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 371 325" style="height:100px; margin-left: 1em;">
 	  <defs/>
 	  <g fill="none" fill-rule="evenodd">
@@ -100,5 +102,6 @@
 	    </g>
 	  </g>
 	</svg>
+	{% endif %}
   </div>
 </header>
