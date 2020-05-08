@@ -206,3 +206,5 @@ The stuff that I need the most help with is:
 - Performance
 
 [deploy-to-netlify]: https://app.netlify.com/start/deploy?repository=https://github.com/hankchizljaw/hylia&stack=cms
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/df75d078-8af1-484d-9a18-9643f41e8d77/deploy-status)](https://app.netlify.com/sites/bug-city/deploys)
