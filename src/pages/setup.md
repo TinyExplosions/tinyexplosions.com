@@ -1,6 +1,7 @@
 ---
 title: 'Site Setup'
 permalink: '/setup/index.html'
+introSummary: 'How the sausage is made...'
 ---
 I've been a big fan of static site generators for a long time, and I'm a well known fan of [Node js](https://nodejs.org/en/), which makes [Eleventy](https://www.11ty.dev) the no-brainer for me. It can be as simple or as complex as you want, but for the moment simplicity was the key.
 
