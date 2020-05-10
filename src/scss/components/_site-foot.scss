@@ -32,4 +32,14 @@
   &__inner {
     flex: 1;
   }
+
+  .nav-footer {
+    ul {
+      justify-content: center;
+
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }

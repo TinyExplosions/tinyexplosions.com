@@ -9,17 +9,7 @@
           </article>
         </div>
       {% endif %}
-      <div>
-        {% set ariaLabel = 'footer navigation' %}
-        <!--{% include "partials/components/nav.njk" %}-->
-        <!--<theme-toggle></theme-toggle>-->
-      </div>
     </div>
-    {% if site.showThemeCredit %}
-      <p class="[ site-foot__credit ] [ pad-top-900 ]">
-        Powered by the <a href="https://hylia.website" rel="external">Hylia Eleventy Starter Kit v{{ pkg.version }}</a>.
-      </p>
-    {% endif %}
     <a class="footer-logo" href="/"><svg class="main-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348 348" style="width: 5em;">
       <defs/>
       <g fill="none" fill-rule="evenodd" stroke="var(--logo-color)">
@@ -41,4 +31,18 @@
       </g>
     </svg></a>
   </div>
+  {% set ariaLabel = 'footer navigation' %}
+  <nav class="nav-footer" aria-label="{{ariaLabel}}">
+    <ul class="[ nav__list ] [ box-flex align-center md:space-before ]">  
+        <li class="nav__item">
+          Powered by <a href="https://hylia.website" rel="external">Hylia/Eleventy</a>
+        </li>
+        <li class="nav__item">
+          <a href="/archive">Archive</a>
+        </li>
+        <li class="nav__item">
+          <a href="/feed.xml">RSS</a>
+        </li>
+    </ul>
+  </nav>
 </footer>
