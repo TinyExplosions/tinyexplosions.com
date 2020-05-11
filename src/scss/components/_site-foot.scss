@@ -1,45 +1,53 @@
 .site-foot {
-  // Reverse whatever the theme colors are
-  background: var(--color-bg-glare);
-  color: var(--color-text);
-  border-top: 1px solid var(--color-stroke);
+    // Reverse whatever the theme colors are
+    background: var(--color-bg-glare);
+    color: var(--color-text);
+    border-top: 1px solid var(--color-stroke);
 
-  a {
-    color: currentColor;
+    a {
+        color: currentColor;
 
-    &:hover {
-      text-decoration: none;
+        &:hover {
+            text-decoration: none;
+        }
+
+        &:hover g {
+            stroke: var(--color-theme-primary);
+        }
+
+        &.footer-logo {
+            transition: 300ms ease all;
+            margin-right: 1em;
+        }
+
+        &.footer-logo:hover {
+            transform: rotate(30deg);
+        }
+
+        &.footer-logo:active,
+        &.footer-logo:focus {
+            outline: 0;
+            border: none;
+            -moz-outline-style: none;
+        }
+
     }
 
-    &:hover g {
-      stroke: var(--color-theme-primary);
+    &__credit {
+        text-align: center;
     }
 
-    &.footer-logo {
-      transition: 300ms ease all;
-      margin-right: 1em;
+    &__inner {
+        flex: 1;
     }
 
-    &.footer-logo:hover {
-      transform: rotate(30deg);
+    .nav-footer {
+        ul {
+            justify-content: center;
+
+            a:hover {
+                text-decoration: underline;
+            }
+        }
     }
-
-  }
-
-  &__credit {
-    text-align: center;
-  }
-  &__inner {
-    flex: 1;
-  }
-
-  .nav-footer {
-    ul {
-      justify-content: center;
-
-      a:hover {
-        text-decoration: underline;
-      }
-    }
-  }
 }

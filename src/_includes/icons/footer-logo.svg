@@ -1,0 +1,20 @@
+<svg class="main-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348 348" style="width: 5em;">
+    <defs />
+    <g fill="none" fill-rule="evenodd" stroke="var(--logo-color)">
+        <circle cx="174" cy="174" r="164" stroke-width="19" />
+        <circle cx="50.5" cy="136.5" r="12.5" stroke-width="9" />
+        <circle cx="146.5" cy="49.5" r="12.5" stroke-width="9" />
+        <circle cx="199.5" cy="96.5" r="12.5" stroke-width="9" />
+        <circle cx="235.5" cy="55.5" r="12.5" stroke-width="9" />
+        <circle cx="199.5" cy="187.5" r="12.5" stroke-width="9" />
+        <circle cx="295.5" cy="126.5" r="12.5" stroke-width="9" />
+        <circle cx="274.5" cy="181.5" r="12.5" stroke-width="9" />
+        <circle cx="235.5" cy="231.5" r="12.5" stroke-width="9" />
+        <circle cx="173.5" cy="237.5" r="12.5" stroke-width="9" />
+        <circle cx="165.5" cy="292.5" r="12.5" stroke-width="9" />
+        <circle cx="161.5" cy="147.5" r="12.5" stroke-width="9" />
+        <circle cx="123.5" cy="117.5" r="12.5" stroke-width="9" />
+        <circle cx="50.5" cy="200.5" r="12.5" stroke-width="9" />
+        <path stroke-width="9" d="M50.5 213v61.56M58.44 127.31l47.11-54.53v-40.9M155.3 57.3l35.87 31.81M235.5 67.21v80.29l-29.39 32.66M289.54 119.67l-15.04-17.2V49.5M116.31 126.06L87.78 160v147.75M154.35 155.92L127.13 188v137.49M165.5 303.75v29.02M182.31 244.5l32.67 27.54h80.52M245.73 231.5h77.85M285.84 181.5h45.67" />
+    </g>
+</svg>

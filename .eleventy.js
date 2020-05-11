@@ -22,6 +22,7 @@ module.exports = function(config) {
 
   // Layout aliases
   config.addLayoutAlias('home', 'layouts/home.njk');
+  config.addLayoutAlias('page', 'layouts/page-archive.njk');
 
   // Transforms
   config.addTransform('htmlmin', htmlMinTransform);
@@ -51,6 +52,13 @@ module.exports = function(config) {
       .reverse()
       .slice(0, site.maxPostsPerPage);
   });
+
+   // Return articles
+ config.addCollection("pages", function(collection) {
+     return collection.getAll().filter(function(item) {
+         return item.data.content_type == "page";
+     });
+ });
 
   // Plugins
   config.addPlugin(rssPlugin);

@@ -1,11 +1,27 @@
-
 .site-head {
-  &__site-name {
-    font-weight: 700;
-    text-decoration: none;
-    color: var(--color-text);
-  }
-  &__inner {
-  	flex: 1;
-	}
+    .wrapper {
+        a:hover path {
+            stroke: var(--color-theme-primary);
+            &.filled {
+            	fill: var(--color-theme-primary);
+            }
+        }
+
+        a:hover circle {
+            stroke: var(--color-theme-primary);
+            &.filled {
+            	fill: var(--color-theme-primary);
+            }
+        }
+    }
+
+    &__site-name {
+        font-weight: 700;
+        text-decoration: none;
+        color: var(--color-text);
+    }
+
+    &__inner {
+        flex: 1;
+    }
 }
