@@ -1,75 +1,44 @@
-<svg class="main-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 555 404" style="width: 7em; margin-right: 1em;">
-    <g fill="none" fill-rule="evenodd" transform="translate(0 7)">
-        <g transform="translate(0 37)">
-            <path stroke="var(--logo-color)" stroke-linecap="square" stroke-width="7" d="M14.5 36.5h150L165 0" />
-            <circle class="filled" cx="14.5" cy="36.5" r="14.5" fill="var(--logo-color)" />
-        </g>
-        <g transform="translate(0 93)">
-            <path stroke="var(--logo-color)" stroke-linecap="square" stroke-width="7" d="M14.5 14.5h150" />
-            <circle class="filled" cx="14.5" cy="14.5" r="14.5" fill="var(--logo-color)" />
-            <path class="filled" fill="var(--logo-color)" d="M150 0h29v29h-29z" />
-        </g>
-        <g transform="translate(0 127)">
-            <path stroke="var(--logo-color)" stroke-linecap="square" stroke-width="7" d="M14.5 14.5h150" />
-            <circle class="filled" cx="14.5" cy="14.5" r="14.5" fill="var(--logo-color)" />
-        </g>
-        <g transform="translate(0 161)">
-            <path stroke="var(--logo-color)" stroke-linecap="square" stroke-width="7" d="M14.5 14.5h150" />
-            <circle class="filled" cx="14.5" cy="14.5" r="14.5" fill="var(--logo-color)" />
-        </g>
-        <g transform="translate(0 195)">
-            <path stroke="var(--logo-color)" stroke-linecap="square" stroke-width="7" d="M14.5 14.5h150" />
-            <circle class="filled" cx="14.5" cy="14.5" r="14.5" fill="var(--logo-color)" />
-            <path class="filled" fill="var(--logo-color)" d="M150 0h29v29h-29z" />
-        </g>
-        <g transform="translate(0 229)">
-            <path stroke="var(--logo-color)" stroke-linecap="square" stroke-width="7" d="M14.5 14.5L324 15v138.29" />
-            <circle class="filled" cx="14.5" cy="14.5" r="14.5" fill="var(--logo-color)" />
-        </g>
-        <g transform="translate(0 263)">
-            <path stroke="var(--logo-color)" stroke-linecap="square" stroke-width="7" d="M14.5 14.5H277v109.63" />
-            <circle class="filled" cx="14.5" cy="14.5" r="14.5" fill="var(--logo-color)" />
-        </g>
-        <g transform="translate(0 297)">
-            <path stroke="var(--logo-color)" stroke-linecap="square" stroke-width="7" d="M14.5 14.5h150v41.08" />
-            <circle class="filled" cx="14.5" cy="14.5" r="14.5" fill="var(--logo-color)" />
-        </g>
-        <g transform="translate(324 7)">
-            <circle class="filled" cx="216.5" cy="66.5" r="14.5" fill="var(--logo-color)" />
-            <path stroke="var(--logo-color)" stroke-linecap="square" stroke-width="7" d="M0 0v67h216" />
-        </g>
-        <g transform="translate(376 93)">
-            <circle class="filled" cx="164.5" cy="14.5" r="14.5" fill="var(--logo-color)" />
-            <path stroke="var(--logo-color)" stroke-linecap="square" stroke-width="7" d="M14 15h150" />
-            <path class="filled" fill="var(--logo-color)" d="M0 0h29v29H0z" />
-        </g>
-        <g transform="translate(240 7)">
-            <circle class="filled" cx="300.5" cy="134.5" r="14.5" fill="var(--logo-color)" />
-            <path stroke="var(--logo-color)" stroke-linecap="square" stroke-width="7" d="M0 0v135h300" />
-        </g>
-        <g transform="translate(263 161)">
-            <circle class="filled" cx="277.5" cy="14.5" r="14.5" fill="var(--logo-color)" />
-            <path stroke="var(--logo-color)" stroke-linecap="square" stroke-width="7" d="M14 15h263" />
-            <path class="filled" fill="var(--logo-color)" d="M0 0h29v29H0z" />
-        </g>
-        <g transform="translate(376 195)">
-            <circle class="filled" cx="164.5" cy="14.5" r="14.5" fill="var(--logo-color)" />
-            <path stroke="var(--logo-color)" stroke-linecap="square" stroke-width="7" d="M14 15h150" />
-            <path class="filled" fill="var(--logo-color)" d="M0 0h29v29H0z" />
-        </g>
-        <g transform="translate(390 229)">
-            <circle class="filled" cx="150.5" cy="14.5" r="14.5" fill="var(--logo-color)" />
-            <path stroke="var(--logo-color)" stroke-linecap="square" stroke-width="7" d="M0 15h150" />
-        </g>
-        <g transform="translate(376 263)">
-            <circle class="filled" cx="164.5" cy="14.5" r="14.5" fill="var(--logo-color)" />
-            <path stroke="var(--logo-color)" stroke-linecap="square" stroke-width="7" d="M14 15h150" />
-            <path class="filled" fill="var(--logo-color)" d="M0 0h29v29H0z" />
-        </g>
-        <g transform="translate(390 297)">
-            <circle class="filled" cx="150.5" cy="14.5" r="14.5" fill="var(--logo-color)" />
-            <path stroke="var(--logo-color)" stroke-linecap="square" stroke-width="7" d="M0 55.58V15h150" />
-        </g>
-        <circle cx="277" cy="195" r="195" stroke="var(--logo-color)" stroke-width="13" fill="none"/>
-    </g>
+<svg class="main-logo" style="width:7em;margin-right:1em" viewBox="0 0 555 404">
+  <defs/>
+  <g fill="none" fill-rule="evenodd" class="filled" transform="translate(-8 -83)">
+    <path stroke="var(--logo-color)" stroke-linecap="square" stroke-width="7" d="M22.5 163.5h150l.5-36.5"/>
+    <circle cx="22.5" cy="163.5" r="14.5" fill="var(--logo-color)" fill-rule="nonzero" class="filled"/>
+    <path stroke="var(--logo-color)" stroke-linecap="square" stroke-width="7" d="M22.5 197.5h150"/>
+    <circle cx="22.5" cy="197.5" r="14.5" fill="var(--logo-color)" fill-rule="nonzero" class="filled"/>
+    <path fill="var(--logo-color)" fill-rule="nonzero" d="M158 183h29v29h-29z" class="filled"/>
+    <path stroke="var(--logo-color)" stroke-linecap="square" stroke-width="7" d="M22.5 231.5h150"/>
+    <circle cx="22.5" cy="231.5" r="14.5" fill="var(--logo-color)" fill-rule="nonzero" class="filled"/>
+    <path stroke="var(--logo-color)" stroke-linecap="square" stroke-width="7" d="M22.5 265.5h150"/>
+    <circle cx="22.5" cy="265.5" r="14.5" fill="var(--logo-color)" fill-rule="nonzero" class="filled"/>
+    <path stroke="var(--logo-color)" stroke-linecap="square" stroke-width="7" d="M22.5 299.5h150"/>
+    <circle cx="22.5" cy="299.5" r="14.5" fill="var(--logo-color)" fill-rule="nonzero" class="filled"/>
+    <path fill="var(--logo-color)" fill-rule="nonzero" d="M158 285h29v29h-29z" class="filled"/>
+    <path stroke="var(--logo-color)" stroke-linecap="square" stroke-width="7" d="M22.5 333.5l309.5.5v138.29"/>
+    <circle cx="22.5" cy="333.5" r="14.5" fill="var(--logo-color)" fill-rule="nonzero" class="filled"/>
+    <path stroke="var(--logo-color)" stroke-linecap="square" stroke-width="7" d="M22.5 367.5H285v109.63"/>
+    <circle cx="22.5" cy="367.5" r="14.5" fill="var(--logo-color)" fill-rule="nonzero" class="filled"/>
+    <path stroke="var(--logo-color)" stroke-linecap="square" stroke-width="7" d="M22.5 401.5h150v41.08"/>
+    <circle cx="22.5" cy="401.5" r="14.5" fill="var(--logo-color)" fill-rule="nonzero" class="filled"/>
+    <circle cx="548.5" cy="163.5" r="14.5" fill="var(--logo-color)" fill-rule="nonzero" class="filled"/>
+    <path stroke="var(--logo-color)" stroke-linecap="square" stroke-width="7" d="M332 97v67h216"/>
+    <circle cx="548.5" cy="197.5" r="14.5" fill="var(--logo-color)" fill-rule="nonzero" class="filled"/>
+    <path stroke="var(--logo-color)" stroke-linecap="square" stroke-width="7" d="M398 198h150"/>
+    <path fill="var(--logo-color)" fill-rule="nonzero" d="M384 183h29v29h-29z" class="filled"/>
+    <circle cx="548.5" cy="231.5" r="14.5" fill="var(--logo-color)" fill-rule="nonzero" class="filled"/>
+    <path stroke="var(--logo-color)" stroke-linecap="square" stroke-width="7" d="M248 97v135h300"/>
+    <circle cx="548.5" cy="265.5" r="14.5" fill="var(--logo-color)" fill-rule="nonzero" class="filled"/>
+    <path stroke="var(--logo-color)" stroke-linecap="square" stroke-width="7" d="M285 266h263"/>
+    <path fill="var(--logo-color)" fill-rule="nonzero" d="M271 251h29v29h-29z" class="filled"/>
+    <circle cx="548.5" cy="299.5" r="14.5" fill="var(--logo-color)" fill-rule="nonzero" class="filled"/>
+    <path stroke="var(--logo-color)" stroke-linecap="square" stroke-width="7" d="M398 300h150"/>
+    <path fill="var(--logo-color)" fill-rule="nonzero" d="M384 285h29v29h-29z" class="filled"/>
+    <circle cx="548.5" cy="333.5" r="14.5" fill="var(--logo-color)" fill-rule="nonzero" class="filled"/>
+    <path stroke="var(--logo-color)" stroke-linecap="square" stroke-width="7" d="M398 334h150"/>
+    <circle cx="548.5" cy="367.5" r="14.5" fill="var(--logo-color)" fill-rule="nonzero" class="filled"/>
+    <path stroke="var(--logo-color)" stroke-linecap="square" stroke-width="7" d="M398 368h150"/>
+    <path fill="var(--logo-color)" fill-rule="nonzero" d="M384 353h29v29h-29z" class="filled"/>
+    <circle cx="548.5" cy="401.5" r="14.5" fill="var(--logo-color)" fill-rule="nonzero" class="filled"/>
+    <path stroke="var(--logo-color)" stroke-linecap="square" stroke-width="7" d="M398 442.58V402h150"/>
+    <circle cx="285" cy="285" r="195" stroke="var(--logo-color)" stroke-width="13"/>
+  </g>
 </svg>
