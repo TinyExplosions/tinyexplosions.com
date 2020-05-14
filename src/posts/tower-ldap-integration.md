@@ -1,6 +1,6 @@
 ---
 title: Tower LDAP Integration
-date: '2020-05-13'
+date: '2020-05-14'
 tags:
   - homelab
   - tech
@@ -92,4 +92,22 @@ This means that an LDAP user who is a member of the above group will be a super 
 
 This should be a good baseline for going forward, as I have a superuser group to set roles in an other applications I want to integrate with LDAP, as well as having Tower correctly integrated.
 
+### Addendum
+
+I was pointed out to me that the easiest way to have my IdM certs trusted was to enroll the machine in IdM, and that that would even allow me to log into the machine over LDAP. Queue lightbulb moment, and feeling a bit daft - of course that makes sense, why use any other method to log in!
+
+```bash
+yum install ipa-client
+ipa-client-install --enable-dns-updates
+```
+
+Was all it took (adding in my IdM server details), and after a reboot, I could enable the 'LDAP start tls' toggle, and feel even more secure in my authentication.
+
+There was a little bit of mucking around in IdM to get thingd as I like, namely
+* Added a new group, `idm_client_sudoers`, which will govern who can auth into hosts
+* Added a Host Group, `idmclients` and added the new client `tower.bugcity.tech` to it
+* Added HBAC rule called `idmclient` and added `idm_client_sudoers` user group, and the `idmclients` host group to it
+* Added Sudo rule `sudoers` and added `idm_client_sudoers` to it
+
+I'm already starting to see how groups in LDAP can get out of control, but in for a penny, in for a pound!
 
