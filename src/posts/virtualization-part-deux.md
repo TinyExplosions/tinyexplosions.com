@@ -34,6 +34,6 @@ There were a couple of things I found when trying to get VM's running, that migh
 
 ![Adding an iso to RHV Manager](/images/iso-add.png "Adding an iso to the storage domain.")
 
-Once it's in place, you should see 'rhel-8.2-x86_64-dvd.iso' available as a cd in 'Boot Options', and can set the First Device in the Boot Sequence to be CD-ROM, and you're off. I had to install an [oVirt SPICE console](https://rizvir.com/articles/ovirt-mac-console/) on my Mac, which let me open the GUI to complete the install.
+Once it's in place, you should see 'rhel-8.2-x86_64-dvd.iso' available as a cd in 'Boot Options', and can set the First Device in the Boot Sequence to be CD-ROM, and you're off. I had to install an [oVirt SPICE console](https://rizvir.com/articles/ovirt-mac-console/) on my Mac, which let me open the GUI to complete the install by running `remote-viewer ~/Downloads/console.cc`.
 
 One final note is that for some reason, once RHEL 8 was installed, it wouldn't let me register with Subscription Manager - there was an SSL based error, that took some time to bottom out, and I ended up changing `proxy_scheme=http` to `proxy_scheme=https` in the `rhsm.conf` file. Once that was completed, registration went fine and I was back where I was towrds the end of last week!

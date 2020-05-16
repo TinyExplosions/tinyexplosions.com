@@ -7,8 +7,8 @@ The centre of the lab. BugCity is a Fujitsu Celsius R930n Workstation, with the 
  
 * 2 x Intel Xeon E5-2658 V1 2.10Ghz 8 Core CPUs
 * 8 x 32GB DDR3L 1066MHz (256GB total)
-* 1 x 240GB SATA III SSD
-* 3 x 500GB SATA III 7.2K HDD
+* 1 x 240GB SAS III SSD
+* 3 x 500GB SAS III 7.2K HDD
 * 1 x AMD Radeon HD6350 512MB GDDR3
 
 ![Image of BugCity, a computer server, placed underneath a desk](/images/bugcity.jpg)
