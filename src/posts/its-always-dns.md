@@ -6,7 +6,7 @@ tags:
   - tech
   - blog
 ---
-OpenShift just won’t install. I’m using IPI, which should be the foolproof method, I’m following the instructions -both in a cursory way, and also in a very detailed, read every line kind of way. I’ve kicked off the installer countless times. I’ve stared at `INFO Waiting up to 30m0s for the cluster to initialize...` for a *lot* more than 30 mins. I’ve left it overnight to see if it sorts itself. I’ve tried to debug. I’ve used up close to all the goodwill of some of my workmates (who are total champions btw).  Still though, I don’t have an installed cluster. 
+OpenShift just won’t install. I’m using IPI, which should be the foolproof method. I’m following the instructions -both in a cursory way, and also in a very detailed, read every line kind of way. I’ve kicked off the installer countless times. I’ve stared at `INFO Waiting up to 30m0s for the cluster to initialize...` for a *lot* more than 30 mins. I’ve left it overnight to see if it sorts itself. I’ve tried to debug. I’ve used up close to all the goodwill of some of my workmates (who are total champions btw).  Still though, I don’t have an installed cluster. 
 
 During one debug session, I was sshing into a node, and tried (and failed) to do it directly via hostname. This led to some interesting experiments
 
@@ -15,7 +15,7 @@ $ ping ocp-nln68-master-1
 PING ocp-nln68-master-1.bugcity.tech.bugcity.tech (178.0.0.11): 56 data bytes
 ```
 
-What was interesting was the `.bugcity.tech.bugcity.tech`, and the fact that it was resolving to the server `178.0.0.11`, rather than the expected `178.0.0.59` This disappeared after a while, but got me digging deeper. Then something struck me. I run a Raspberry Pi with Pi-Hope on it as my network’s DNS (it calls out to cloudflare dns over https), and I use it’s built in fork of dnsmasq to do some local serving of traffic (again, I barely know what any of it does, but it seems to work). Here’s a snippet from `/etc/dnsmasq.d/01-pihole.conf`
+What was interesting was the `.bugcity.tech.bugcity.tech`, and the fact that it was resolving to the server `178.0.0.11`, rather than the expected `178.0.0.59` This disappeared after a while, but got me digging deeper. Then something struck me. I run a Raspberry Pi with Pi-Hope on it as my network’s DNS (it calls out to cloudflare dns over https), and I use its built in fork of dnsmasq to do some local serving of traffic (again, I barely know what any of it does, but it seems to work). Here’s a snippet from `/etc/dnsmasq.d/01-pihole.conf`
 
 ```bash
 local-ttl=2
@@ -37,7 +37,7 @@ I also created a nice separate network for lab based play, you know, following b
 
 ![Screenshot of Unifi Admin console showing the networking setup](/images/network-setup.png)
 
-Note the domain name I gave the network - `bugcity.tech`. Then, once I got my hot little fingers on the server, I fired it up (eventually) and stuck, you guessed it! `bugcity.tech` as it’s hostname, and therefore the host for RHEV. That’s a lot of work for a single name, and while I don’t have a specific evidence that this is too blame, I am highly suspicious, so things need to change. 
+Note the domain name I gave the network - `bugcity.tech`. Then, once I got my hot little fingers on the server, I fired it up (eventually) and stuck, you guessed it! `bugcity.tech` as its hostname, and therefore the host for RHEV. That’s a lot of work for a single name, and while I don’t have a specific evidence that this is too blame, I am highly suspicious, so things need to change. 
 
 Another thing I investigated while all this was going on was disk speed. [According to this article](https://www.ibm.com/cloud/blog/using-fio-to-tell-whether-your-storage-is-fast-enough-for-etcd), I needed check if the 99th percentile of fdatasync durations is less than 10ms. I dutifully ran the wee tool and got, well less than that.
 
