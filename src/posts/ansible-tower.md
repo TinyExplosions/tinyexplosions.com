@@ -13,7 +13,7 @@ subscription-manager repos --enable ansible-2.9-for-rhel-8-x86_64-rpms
 yum install ansible
 ```
 
-After that was a quick check of the minimum specs for tower, and the requisite bumping of resources (4 GB RAM, 2 CPUs) and a VM restart, then to the [Ansible Tower documents](https://docs.ansible.com/ansible-tower/latest/html/quickinstall/download_tower.html) to figure stuff out. It was a download of the Bundles Installation Program, then modify the default inventory to add some passwords
+After that was a quick check of the minimum specs for tower, and the requisite bumping of resources (4 GB RAM, 2 CPUs) and a VM restart, then to the [Ansible Tower documents](https://docs.ansible.com/ansible-tower/latest/html/quickinstall/download_tower.html) to figure stuff out. It was a download of the bundled Installation Program, then modify the default inventory to add some passwords
 
 ```yaml
 [tower]

@@ -15,7 +15,7 @@ $ ping ocp-nln68-master-1
 PING ocp-nln68-master-1.bugcity.tech.bugcity.tech (178.0.0.11): 56 data bytes
 ```
 
-What was interesting was the `.bugcity.tech.bugcity.tech`, and the fact that it was resolving to the server `178.0.0.11`, rather than the expected `178.0.0.59` This disappeared after a while, but got me digging deeper. Then something struck me. I run a Raspberry Pi with Pi-Hope on it as my network’s DNS (it calls out to cloudflare dns over https), and I use it’s built in fork of dnsmasq to do some local serving of traffic (again, I barely know what any of it does, but it seems to work). Here’s a snippet from `/etc/dnsmasq.d/01-pihole.conf`
+What was interesting was the `.bugcity.tech.bugcity.tech`, and the fact that it was resolving to the server `178.0.0.11`, rather than the expected `178.0.0.59` This disappeared after a while, but got me digging deeper. Then something struck me. I run a Raspberry Pi with Pi-Hole on it as my network’s DNS (it calls out to cloudflare dns over https), and I use it’s built in fork of dnsmasq to do some local serving of traffic (again, I barely know what any of it does, but it seems to work). Here’s a snippet from `/etc/dnsmasq.d/01-pihole.conf`
 
 ```bash
 local-ttl=2
