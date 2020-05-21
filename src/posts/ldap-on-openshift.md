@@ -20,9 +20,9 @@ To begin, it was into IdM to get that side of things squared away. I created a g
 It was then time to fire up `ldapsearch` to check out how my particular configuration reports things. Lets get the user `tinyexplosions`. This will give us the dn's of the various items we will want to query down the road.
 
 ```bash
-ldapsearch -x  -LLL -H ldap://idm.bugcity.tech:389 \ 
--D "uid=admin,cn=users,cn=compat,dc=bugcity,dc=tech" \ 
--w <password> -b "cn=users,cn=accounts,dc=bugcity,dc=tech" \ 
+ldapsearch -x  -LLL -H ldap://idm.bugcity.tech:389 \
+-D "uid=admin,cn=users,cn=compat,dc=bugcity,dc=tech" \
+-w <password> -b "cn=users,cn=accounts,dc=bugcity,dc=tech" \
 -s sub "uid=tinyexplosions"
 
 dn: uid=tinyexplosions,cn=users,cn=accounts,dc=bugcity,dc=tech
@@ -107,3 +107,72 @@ spec:
 ```
 
 Applying the above, and waiting the appropriate time for it to apply, and it was back to the login screen to test. First up I was able to successfully log in with both accounts. From there, it was back to IdM, and I removed user `ocp_user` from the `ocpusers` group, and was then unable to log into OpenShift with them. The user `tinyexplosions` continued to work, and remained able to log in with membership of *either* `superusers` or `ocpusers` enabled, or with membership of both groups enabled, which is what I wanted.
+
+### Syncing Groups
+
+This is where things get a little trickier. [The official documents](https://docs.openshift.com/container-platform/4.4/authentication/ldap-syncing.html) are pretty good, so I sugegst reading through them first. Then fire up a text editor and write some more YAML (christ, does OpenShift love a bit of YAML). Nothing too fancy here though:
+
+```yaml
+kind: LDAPSyncConfig
+apiVersion: v1
+url: ldap://idm.bugcity.tech:389
+insecure: false
+ca: "<relative/link/to/cert.pem>"
+bindDN: "uid=admin,cn=users,cn=compat,dc=bugcity,dc=tech"
+bindPassword: "<password>"
+groupUIDNameMapping:
+    "cn=superusers,cn=groups,cn=accounts,dc=bugcity,dc=tech": openshift_admins
+rfc2307:
+    groupsQuery:
+        baseDN: "cn=accounts,dc=bugcity,dc=tech"
+        scope: sub
+        derefAliases: never
+        filter: (objectClass=groupOfNames)
+        pageSize: 0
+    groupUIDAttribute: dn
+    groupNameAttributes: [ cn ]
+    groupMembershipAttributes: [ member ]
+    usersQuery:
+        baseDN: "cn=users,cn=accounts,dc=bugcity,dc=tech"
+        scope: sub
+        derefAliases: never
+        pageSize: 0
+    userUIDAttribute: dn
+    userNameAttributes: [ uid ]
+```
+
+Of interest are the `baseDn`, `filter` and attribute fields. All of these should be familiar though. The `baseDn` is the one secified in the Tower integration, so you can copy those from the LDAP User Search and LDAP Group Search fields we added [in our configuration](/posts/tower-ldap-integration) last week. Also, the `filter` attribute is taken from the Tower config too - it's the LDAP Group Search filter, so can be added here too. The various attribute fields are to get the full dn of users, and the attribute we want to appear as a username in OpenShift. Finally, we have `groupUIDNameMapping`. This allows us to have a group with one name in LDAP, and another in OpenShift. In this case, we take our `superusers` group in LDAP, and call it `openshift_admins` in OCP.
+
+As is stands, running this will take every group LDAP sees and add them as groups in OpenShift. Clearly this isn't desirable, and so that is where whitelists and blacklists come in. They are files that you can use to explicitly include or exclude groups from the sync. In our example, we only want the `superusers` and `ocpusers` groups to sync their info, so we add their dn's to a whitelist file
+
+```text
+cn=superusers,cn=groups,cn=accounts,dc=bugcity,dc=tech
+cn=ocpusers,cn=groups,cn=accounts,dc=bugcity,dc=tech
+```
+
+Once these resources are in place, you can run it against OpenShift (leave out the `--confirm` if you just want to test the output.
+
+```
+ oc adm groups sync --sync-config=./usersync.yaml --whitelist=./whitelist.txt --confirm
+```
+
+During some of my runs, I saw the following error, all it meant was the group `openshift_admins` already existed (and wasn't created by an earlier sync), and so I deleted the group and ran it again.
+
+```bash
+group "openshift_admins": openshift.io/ldap.host label did not match sync host: wanted idm.bugcity.tech, got
+```
+
+After a successful run, I could see my users and groups in OpenShift, and the only thing left to do was make the `openshift_admins` group cluster adminsitrators, meaning `tinyexplosions` can mess up anything they want!
+
+```
+oc adm policy add-cluster-role-to-group cluster-admin openshift_admins
+```
+
+Repeating the logout/login dance with user `tinyexplosions` and I was greeted with the Administrator overview, and some lovely errors to look into - but from an auth point of view, it was a rousing success.
+
+
+![OpenShift admin dashboard with user TinyExplosions authenticated](/images/ldap-user-admin.png "TinyExplosions logged in as a cluster admin (ignore the errors, that'll get sorted later)")
+
+Another useful command to know is `oc adm groups prune --sync-config=./usersync.yaml --whitelist=./whitelist --confirm` - this will remove users who no longer exist in the groups and keep you in tip top shape. 
+
+The only thing left to do now is make all the above a cron job, so that we can periodically sync, but that is for next time.
