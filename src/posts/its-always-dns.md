@@ -5,6 +5,9 @@ tags:
   - homelab
   - tech
   - blog
+  - DNS
+  - RHEV
+  - OpenShift
 ---
 OpenShift just won’t install. I’m using IPI, which should be the foolproof method. I’m following the instructions -both in a cursory way, and also in a very detailed, read every line kind of way. I’ve kicked off the installer countless times. I’ve stared at `INFO Waiting up to 30m0s for the cluster to initialize...` for a *lot* more than 30 mins. I’ve left it overnight to see if it sorts itself. I’ve tried to debug. I’ve used up close to all the goodwill of some of my workmates (who are total champions btw).  Still though, I don’t have an installed cluster. 
 

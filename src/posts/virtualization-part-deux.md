@@ -5,6 +5,8 @@ tags:
   - homelab
   - tech
   - blog
+  - RHEV
+  - RHEL 7
 ---
 So here we are again, back to Virtualization. As [outlined in my previous post](/posts/back-tracking), I'm ditching libvirt, and embracing the whole RHEV lifestyle (RHEV is easier to pronounce than RHV, so forgive me if I use it here and there). My starting point, as ever, was the [official dcumentation](https://access.redhat.com/documentation/en-us/red_hat_virtualization/4.3/html/installing_red_hat_virtualization_as_a_standalone_manager_with_local_databases/installing_the_red_hat_virtualization_manager_sm_localdb_deploy) - double checking to make sure they were the right ones of course :)
 

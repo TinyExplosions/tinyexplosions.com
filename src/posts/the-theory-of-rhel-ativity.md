@@ -5,6 +5,8 @@ tags:
   - homelab
   - tech
   - blog
+  - RHEL 8
+  - RHEL 7
 ---
 So, you want to install RHEL? Thankfully it's ~~not too tricky a process~~ somewhat nuanced (see below), as we'll discover here. My first step was to login to [access.redhat.com](https://access.redhat.com) and downloaded the RHEL 8.2 Boot ISO.
 

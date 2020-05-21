@@ -5,6 +5,10 @@ tags:
   - homelab
   - tech
   - blog
+  - Ansible
+  - Tower
+  - IdM
+  - LDAP
 ---
 With the OpenShift install taking longer than expected, and with it having some... issues... I decided to knock it on the head for a bit, and refocus on Ansible, and specifically integrating it with IdM -well, there’s no point in having a central identity provider, if I’m not going to use it to centrally identify people. 
 

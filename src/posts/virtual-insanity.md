@@ -5,6 +5,8 @@ tags:
   - homelab
   - tech
   - blog
+  - libvirt
+  - RHEL 7
 ---
 The future’s made of it, according to [some bloke in a massive hat](https://youtu.be/4JkIs37a2JE), but it’s also a pretty key component to a lab setup, considering a lot of what will be deployed will be build on virtual machines. Yes, I’m aware the docker and containers exist, but a container *platform* works better when deployed on VMs :-) there are, it seems, three main ways to go about the provision of VMs, VMWare, RHEV, and libvirt. 
 

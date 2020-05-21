@@ -5,6 +5,9 @@ tags:
   - homelab
   - tech
   - blog
+  - Ansible
+  - Tower
+  - RHEL 8
 ---
 Real work was the priority today, so not a huge amount of playtime on the lab, but I did get Ansible and Tower configured (at least in it's most basic incarnation). The Ansible install followed the [official documentation](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-ansible-on-rhel-centos-or-fedora), with the enabling of the correct repo, and a `yum install`
 

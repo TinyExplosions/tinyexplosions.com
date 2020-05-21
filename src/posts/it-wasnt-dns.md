@@ -5,6 +5,9 @@ tags:
   - homelab
   - tech
   - blog
+  - DNS
+  - RHEV
+  - OpenShift
 ---
 It's been a few days now since I took the steps mentioned in [my last post](/posts/its-always-dns), and I cleared everything out and started again. It took a couple of hours, but thanks to it not being the first time, and the notes I'd made on the way, I had the server (now christened `bigboy.bugcity.tech`) up, with RHEV installed, and my network and disk setup as described in the post.
 
