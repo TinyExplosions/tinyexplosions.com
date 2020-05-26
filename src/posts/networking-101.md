@@ -62,4 +62,8 @@ server=/bugcity.tech/178.0.0.17
 * `domain` and `local` let me expand simple names and add `foo.com`, and tells FTL that it's locally resolved, so never go out to DNS for any `foo.com` addresses (the NAS address is specified in `/etc/hosts`)
 * `server` these entries perform forward and reverse lookup from this device to the IDM install that has the IP 178.0.0.17. Basically, this means that any requests for a `bugcity.tech` address will be kicked to my IdM install, and handled there.
 
+In IdM, I have a few things configured as pictured. Some come automatically when a machine is enrolled with IdM, `api.ocp` and `apps.ocp` are the IPs of my OpenShift cluster.
+
+![Red Hat Identity Manager DNS page](/images/idm-DNS.png "IdM DNS Zone for bugcity.tech.")
+
 So, there we have it. Some decent routing for requests so that the things I want to keep internal stay internal, and anything that needs to go outside the network are using https, so no snooping by Vodafone :)
