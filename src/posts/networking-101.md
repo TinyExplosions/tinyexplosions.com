@@ -64,6 +64,6 @@ server=/bugcity.tech/178.0.0.17
 
 In IdM, I have a few things configured as pictured. Some come automatically when a machine is enrolled with IdM, `api.ocp` and `apps.ocp` are the IPs of my OpenShift cluster.
 
-[![Red Hat Identity Manager DNS page](/images/idm-DNS.png "IdM DNS Zone for bugcity.tech.")](/images/idm-DNS.png)
+[![Red Hat Identity Manager DNS page](/images/idm-DNS.png "IdM DNS Zone for bugcity.tech.")](/images/Idm-DNS.png)
 
 So, there we have it. Some decent routing for requests so that the things I want to keep internal stay internal, and anything that needs to go outside the network are using https, so no snooping by Vodafone :)
