@@ -57,7 +57,7 @@ Then, it was into OpenShift, to the cluster OAuth configurater `/k8s/cluster/con
 
 Once that was filled in, I waited a couple of minutes for it to apply, then logged out of the cluster, and was greeted with a new login screen, which was promising
 
-![OpenShift login screen showing kube:admin and ldap options](/images/ocp-login.png "OpenShift login screen, with a new, shiny 'ldap' button!")
+[![OpenShift login screen showing kube:admin and ldap options](/images/ocp-login.png "OpenShift login screen, with a new, shiny 'ldap' button!")](/images/ocp-login.png)
 
 Using the new ldap functionality, I input the details for the user `tinyexplosions`, and it logged me in! Logging out, and retrying authentication with the `ocp_user` user also allowed me to log in, which was expected, but not desired. From this point it was time to dig into the yaml, and make some changes in order to restrict auth by group.
 
@@ -171,7 +171,7 @@ oc adm policy add-cluster-role-to-group cluster-admin openshift_admins
 Repeating the logout/login dance with user `tinyexplosions` and I was greeted with the Administrator overview, and some lovely errors to look into - but from an auth point of view, it was a rousing success.
 
 
-![OpenShift admin dashboard with user TinyExplosions authenticated](/images/ldap-user-admin.png "TinyExplosions logged in as a cluster admin (ignore the errors, that'll get sorted later)")
+[![OpenShift admin dashboard with user TinyExplosions authenticated](/images/ldap-user-admin.png "TinyExplosions logged in as a cluster admin (ignore the errors, that'll get sorted later)")](/images/ldap-user-admin.png)
 
 Another useful command to know is `oc adm groups prune --sync-config=./usersync.yaml --whitelist=./whitelist --confirm` - this will remove users who no longer exist in the groups and keep you in tip top shape. 
 

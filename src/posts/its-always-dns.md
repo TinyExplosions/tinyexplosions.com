@@ -38,7 +38,7 @@ except-interface=nonexisting
 
 I also created a nice separate network for lab based play, you know, following best practise and separating traffic and all that good stuff (again, I feel I must stress that I don't really understand *any* of this stuff deeply, so if you're an expert, feel free to roll your eyes). It was configured as below
 
-![Screenshot of Unifi Admin console showing the networking setup](/images/network-setup.png)
+[![Screenshot of Unifi Admin console showing the networking setup](/images/network-setup.png)](/images/network-setup.png)
 
 Note the domain name I gave the network - `bugcity.tech`. Then, once I got my hot little fingers on the server, I fired it up (eventually) and stuck, you guessed it! `bugcity.tech` as its hostname, and therefore the host for RHEV. That’s a lot of work for a single name, and while I don’t have a specific evidence that this is too blame, I am highly suspicious, so things need to change. 
 

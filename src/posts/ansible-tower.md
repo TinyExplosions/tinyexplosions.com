@@ -47,6 +47,6 @@ rabbitmq_use_long_name=false
 
 And a `./setup.sh` to get going. First time round there was an error thanks to `rsync` not being installed, but once I did that we had Tower up and running in a jiffy!
 
-![Red Hat Tower Interface](/images/tower-dashboard.png "Ansible Tower Dashboard - a bit empty for now, but will soon get filled with playbooks.")
+[![Red Hat Tower Interface](/images/tower-dashboard.png "Ansible Tower Dashboard - a bit empty for now, but will soon get filled with playbooks.")](/images/tower-dashboard.png)
 
 The plan was to get LDAP auth setup between Tower and Idm, but the siren song of [OpenShift IPI on RHEV](https://docs.openshift.com/container-platform/4.4/installing/installing_rhv/installing-rhv-default.html) was too strong, and I got a little distracted by that, but more on that another day.

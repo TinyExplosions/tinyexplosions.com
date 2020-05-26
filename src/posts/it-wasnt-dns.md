@@ -39,7 +39,7 @@ fsync/fdatasync/sync_file_range:
 
 That puts the 99th percentile at 2.6ms, well within what we need. With that, I decided to run the install on the fast drive to see what happened, so did a little bastion dance, some configuration and ran `create cluster`. 40 minutes or so later....
 
-![Dashboard of a freshly installed OpenShift Instance](/images/openshift-dashboard.png "Holy good gravy, there's an OpenShift dashboard!")
+[![Dashboard of a freshly installed OpenShift Instance](/images/openshift-dashboard.png "Holy good gravy, there's an OpenShift dashboard!")](/images/openshift-dashboard.png)
 
 So, that told me a lot - or at least told me that it was either the networking, or the disks that were to blame. While it would be great to just move on and call it done, I can't just do that - I have to know *for sure*, so it was out with `cluster-install destroy cluster` and a reconfigure to use the slower disks.
 

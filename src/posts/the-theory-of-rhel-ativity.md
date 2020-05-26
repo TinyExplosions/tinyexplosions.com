@@ -18,13 +18,13 @@ If you've newly formatted it, unmount it (I performed all this in the Disk Utili
 
 First things first, lets find out where my newly formatted USB stick is. As I'm a mac user, `diskutil list` will give me the address of all disks, my output can be seen below, with the USB stick at `/dev/disk2`.
 
-![Bash output from the command diskutil list](/images/diskutil-list.png)
+[![Bash output from the command diskutil list](/images/diskutil-list.png)](/images/diskutil-list.png)
 
 The next stage is to use `dd` to move the ISO onto the Disk. I changed into the directory containing the RHEL download, and used
 `sudo dd if=rhel-8.2-x86_64-boot.iso of=/dev/disk2`
 to create the boot media. After a short wait, I got confirmation that everything had moved across just fine.
 
-![Bash output from the command sudo dd if=rhel-8.2-x86_64-boot.iso of=/dev/disk2](/images/dd.png)
+[![Bash output from the command sudo dd if=rhel-8.2-x86_64-boot.iso of=/dev/disk2](/images/dd.png)](/images/dd.png)
 
 From there, it's time to take the USB stick, whack it into the server, plug in a keyboard, and power up to see what happens. I followed [the official install guide](https://developers.redhat.com/rhel8/install-rhel8/), and after a little bit, had the installer up and running. That is where my problems started. For some reason, the installer was unable to see any of the 4 HDDs the machine has in it. I rebooted, checked to be *sure* there was actually drives in it, used the onboard RAID to create a volume, yet still there was no disks showing in the installer.
 
@@ -60,7 +60,7 @@ Then, on the advice of a friend, I installed Cockpit - a really nice, web based 
 
 [The setup instructions](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/getting_started_with_cockpit/installing_and_enabling_cockpit) are quite clear, and after a few more commands, and some unblocking of ports, I was able to login and see some of my wee servers stats.
 
-![Cockpit server administration dashboard showing health of bugcity](/images/cockpit.png "Cockpit dashboard, giving easy access to a whole host of functionality.")
+[![Cockpit server administration dashboard showing health of bugcity](/images/cockpit.png "Cockpit dashboard, giving easy access to a whole host of functionality.")](/images/cockpit.png)
 
 The eagle-eyed, or nosy of you might well see the 'Virtual Machines' tab on the dashboard, but that is what the next post will get into.
 

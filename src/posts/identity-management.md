@@ -39,6 +39,6 @@ ipa-server-install --allow-zone-overlap
 
 This time, the installer completed successfully, and going to idm.bugcity.tech in a browser gave me a lovely IdM GUI to log into (as I’ve said before, I love a good GUI). 
 
-![Red Hat Identity Manager Interface](/images/idm.png "IdM Dashboard - lots of stuff here to learn.")
+[![Red Hat Identity Manager Interface](/images/idm.png "IdM Dashboard - lots of stuff here to learn.")](/images/idm.png)
 
 There will be a lot to dig into I’m sure to configure this properly, as well as getting it to play well with Tower, OpenShift etc etc, but as per usual, it all looks to have installed ok, and so all that is for another day.

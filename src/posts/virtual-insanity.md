@@ -38,7 +38,7 @@ scp rhel-server-7.8-x86_64-dvd.iso tinyexplosions@bugcity:/var/lib/libvirt/image
 
 to get the iso into `/var/lib/libvirt/images`. Then I created some storage, a bridge network, and spun up my first VM - the GUI is fairly intuitive
 
-![Cockpit's create VM UI showing configuration of a virtual machine](/images/create-vm.png "UI for creating a VM (ignore the warning on installation source, that's to be sorted another day. Still works as it should though)")
+[![Cockpit's create VM UI showing configuration of a virtual machine](/images/create-vm.png "UI for creating a VM (ignore the warning on installation source, that's to be sorted another day. Still works as it should though)")](/images/create-vm.png)
 
 It's worth noting that the problems I had with RHEL 8 disappear under Libvirt - all connection to storage is taken care of, so I can run as many RHEL 8 VMs as I could possibly want, so that's a success!
 

@@ -34,7 +34,7 @@ Next to configure was a storage domain, for that I added a local mount made up f
 
 There were a couple of things I found when trying to get VM's running, that might be useful for others. THe first was in getting an iso into the system to add to my machines. This is done by going to Storage -> Domains -> Domain, then selecting the 'Disks' option at the top. Then you click 'Upload -> Start' and add your iso:
 
-![Adding an iso to RHV Manager](/images/iso-add.png "Adding an iso to the storage domain.")
+[![Adding an iso to RHV Manager](/images/iso-add.png "Adding an iso to the storage domain.")](/images/iso-add.png)
 
 Once it's in place, you should see 'rhel-8.2-x86_64-dvd.iso' available as a cd in 'Boot Options', and can set the First Device in the Boot Sequence to be CD-ROM, and you're off. I had to install an [oVirt SPICE console](https://rizvir.com/articles/ovirt-mac-console/) on my Mac, which let me open the GUI to complete the install by running `remote-viewer ~/Downloads/console.cc`.
 

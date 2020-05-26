@@ -92,7 +92,7 @@ Secondly, I wanted to return to the `is_superuser` clause in the tower config. E
 This means that an LDAP user who is a member of the above group will be a super user in tower, giving the full access. This is verified by logging in as both 'tinyexplosions' and 'tower_admin' and seeing the differences
 
 
-![Tower LDAP user comparison. One user can see all options, the other cannot](/images/tower-superuser.png "User 'tinyexplosions' is a Tower Administrator, user 'tower_admin' is not.")
+[![Tower LDAP user comparison. One user can see all options, the other cannot](/images/tower-superuser.png "User 'tinyexplosions' is a Tower Administrator, user 'tower_admin' is not.")](/images/tower-superuser.png)
 
 This should be a good baseline for going forward, as I have a superuser group to set roles in an other applications I want to integrate with LDAP, as well as having Tower correctly integrated.
 

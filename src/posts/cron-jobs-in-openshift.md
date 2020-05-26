@@ -11,7 +11,7 @@ tags:
 ---
 Yesterday [was a successful day](/posts/ldap-on-openshift), and on the face of it - today should have been child's play. After all, I have created a sync job for OpenShift, I can run it just fine from the command line, all that needs to be done is run it every x mins/hours/days whatever. Heck, there's even a section in the OpenShift Console that's labelled 'Cron Jobs' - I'll be done in minutes.
 
-![OpenShift Console with 'Cron Jobs' highlighted](/images/CRON-JOBS.png "Look, it's a section labelled 'Cron Jobs' - this is going to be a piece of cake...")
+[![OpenShift Console with 'Cron Jobs' highlighted](/images/CRON-JOBS.png "Look, it's a section labelled 'Cron Jobs' - this is going to be a piece of cake...")](/images/CRON-JOBS.png)
 
 It was then that my naivety with the workings of OpenShift came to the fore, leading to a bit more work and googling that I'd expected, but I guess that's why I'm here - to go through the hassle so you don't have to. Or future me doesn't have too when I want to add another cron job in a few months.
 
@@ -43,7 +43,7 @@ whitelist.txt: |-
 
 click on save, and in theory I was done. But would have to wait an hour for the job to be run again. I can't have that, so over to the aforementioned, but heretofore unclicked 'Cron Jobs' item, selected my job, and jumped into the YAML to set schedule to `*/1 * * * *` (that's 'every minute' for those that, like me, don't read cron), and within 60 seconds, my job was running again, and this time - success!
 
-![Successful run of my cron job](/images/complete.png "Job's a good 'un")
+[![Successful run of my cron job](/images/complete.png "Job's a good 'un")](/images/complete.png)
 
 So, there we have it. OpenShift is talking to LDAP on IdM to perform Authentication, and every hour will sync LDAP groups with OpenShift, so we have RBAC in place. At some point, it'll be good to add a 'prune' job to run as well, but given that it's only me around, and I'm not going to be adding many users, it's at a lower priority.
 
