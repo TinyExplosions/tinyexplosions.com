@@ -90,4 +90,4 @@ In my case, I point a browser to http://adventure-time-quoter-mathematical.apps.
 
 So there you have it, your first application running on OpenShift. Naturally, you will want to add more functionality, and some extra options for when you deploy, but you're on the way now.
 
-The complete application I deployed is available [on GitHub](https://github.com/TinyExplosions/ocp-quoter), albeit with some things added that weren't mentioned here, but feel free to take and deploy it if you want!
+The complete application I deployed is available [on GitHub](https://github.com/TinyExplosions/ocp-quoter/tree/v1.0), albeit with some things added that weren't mentioned here, but feel free to take and deploy it if you want!
