@@ -10,7 +10,7 @@ tags:
   - OpenShift
   - NFS
 ---
-After our little sojourn into app dev yesterday, it's dropping back to infrastructure today to talk Persistent Volumes (PV's) and Persistent Volume Claims (PVC's). For the uninitiated, a PV is like your big disk, and each PVC claims a certain part of that, kind of like a folder. Wile all the kids these days love talking about 'ephemeral' and 'stateless' apps, having some amount of persistent storage is useful for a variety of usecases - not least of which is for an Image Registry.
+After our little sojourn into app dev yesterday, it's dropping back to infrastructure today to talk Persistent Volumes (PV's) and Persistent Volume Claims (PVC's). ~~For the uninitiated, a PV is like your big disk, and each PVC claims a certain part of that, kind of like a folder.~~ *It turns out that my analogy, and knowledge of PV's and PVC's was very wrong - see addendum below* While all the kids these days love talking about 'ephemeral' and 'stateless' apps, having some amount of persistent storage is useful for a variety of usecases - not least of which is for an Image Registry.
 
 So, it was time for PV's, but what which one to choose? Given that my cluster is running on RHV, I could spin up a drive or some space on there, but that seemed a little complicated in many ways, so my eyes turned to my NAS... well, it does have 'Storage' as part of it's acronym... I have a Synology DS218+ to hold media, but it has plenty of spare space on it, so lets get adding an NFS share to it.
 
@@ -61,6 +61,12 @@ This is creating a claim called `synology-pcvc-images` and I'm specifying that i
 
 [![OpenShift PVC screen showing correctly bound Claim](/images/pvc-success.png)](/images/pvc-success.png)
 
-You might notice in the screenshot above that it is a little misleading. Or at least, it was to me before checking with a colleague. The 'Capacity 50Gi' looked very wrong - that was the entirety of the PV, but I had only specified 5Gi in my configuration. It would seem that this little nugget refers to the face that it can expand *up to* 50Gi if it needs to, but verifying the YAML for the claim shows that 5Gi is correctly specified as it's size.
+~~You might notice in the screenshot above that it is a little misleading. Or at least, it was to me before checking with a colleague. The 'Capacity 50Gi' looked very wrong - that was the entirety of the PV, but I had only specified 5Gi in my configuration. It would seem that this little nugget refers to the face that it can expand *up to* 50Gi if it needs to, but verifying the YAML for the claim shows that 5Gi is correctly specified as it's size.~~
 
 So there you have it - my cluster is now able to save stuff on my NAS - maybe the next step is hooking the claim up to the image registry... look out for that in a future installment.
+
+
+### Update
+It turns out, like so many things in life, that storage in OpenShift is not as easy as I might have thought, or the above might have led you to believe. In fact, PV's and PVC's have a 1 <-> 1 relationship, and so in my example above, all I have done is created a 50GB folder for my images. Useful, but certainly not the intention when I set out. If I wanted more 'folders' or space for applications, using the method above I would have to create more PV's and more PVC's.
+
+What I *actually* intended to do was to provision dynamic storage, probably through a `StorageClass` but it turns out [this doesn't currently exist for NFS](https://docs.openshift.com/container-platform/4.4/storage/dynamic-provisioning.html). So some more research is required on this one.
