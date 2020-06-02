@@ -15,6 +15,8 @@ My networking setup is (quite probably needlessly) quite complicated. As I happe
 
 In the end I picked up a [USG security gateway](https://www.ui.com/unifi-routing/usg/), 2 [US‑8‑60W 8 port hubs](https://www.ui.com/unifi-switching/unifi-switch-8/), and a [UAP-AC-IW In-Wall access point](https://inwall.ui.com). I already had a Synology NAS, and so Docker on that was put into service to run the Controller software to save me getting a Cloud Key. Finally, because I'm a glutton for punishment, a [Raspberry Pi 4](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/) was also aquired, to run [Pi Hole](https://pi-hole.net).
 
+[![Screenshot showing the network devices connected together.](/images/network-device-setup.png "The physical layout of my network devices")](/images/network-device-setup.png)
+
 Once everything arrived, was plugged in, and recognised by the Controller software (which took longer than it should have due to some dodgy RJ45 sockets and my less than stellar crimping skills), it was time to sort out some networks. Eventually I settled on three:
 
 * `Computers n Shit` -this is the 'main' computers in the house - our laptops, phones, the Nas, the Raspbrry Pi etc (192.168.0.0/24)
