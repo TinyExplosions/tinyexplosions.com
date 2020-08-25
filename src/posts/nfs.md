@@ -1,6 +1,6 @@
 ---
 title: NFS, or where to store stuff on your cluster
-date: '2020-08-18'
+date: '2020-08-25'
 tags:
   - homelab
   - tech
