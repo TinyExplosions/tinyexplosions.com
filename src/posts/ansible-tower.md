@@ -1,52 +1,38 @@
 ---
-title: Ansible & Tower
-date: '2020-05-12'
+title: Over Complication
+date: '2022-29-11'
 tags:
-  - homelab
-  - tech
+  - automation
   - blog
-  - Ansible
-  - Tower
-  - RHEL 8
 ---
-Real work was the priority today, so not a huge amount of playtime on the lab, but I did get Ansible and Tower configured (at least in it's most basic incarnation). The Ansible install followed the [official documentation](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-ansible-on-rhel-centos-or-fedora), with the enabling of the correct repo, and a `yum install`
 
-```bash
-subscription-manager repos --enable ansible-2.9-for-rhel-8-x86_64-rpms
-yum install ansible
-```
+Reading through Mastodon this morning, I came across [a fun post](https://sixcolors.com/post/2022/11/creating-a-smart-on-air-sign-with-an-e-ink-display/) by Dan Moren, which sparked some ideas for me of ways to massively over-complicate simple tasks. In this age of remote work, I spend _too much_ time on conference calls, at various hours of the day, and while my low tech approach of 'if the door is closed, don't come in' is moderately successful, what I really like doing is spending time and money on techy stuff, so it's time to play!
 
-After that was a quick check of the minimum specs for tower, and the requisite bumping of resources (4 GB RAM, 2 CPUs) and a VM restart, then to the [Ansible Tower documents](https://docs.ansible.com/ansible-tower/latest/html/quickinstall/download_tower.html) to figure stuff out. It was a download of the bundled Installation Program, then modify the default inventory to add some passwords
+My first port of call is [Home Assistant](https://www.home-assistant.io). I've been slowly building up the smarts in the house, and it's a great centralised point to gather information, display it, or act on it in a whole range of ways. If I can get my 'on air' status into Home Assistant, the sky is really the limit on what I can do - could turn lights on (or change their colour), announce on my Echos that "Dad's on call", send notifications to people - any number of wacky and wild things that are totally over the top.
+
+The easiest approach to this is to set up a `binary sensor` - this is a simple entity that has an on/off state, and is perfect for my needs - I'm either on air, or not, there's no need for extra state (or is there...?). These are pretty easy to set up in Home Assistant, but then the over complications started to swirl. "What if I want to change the state remotely?" "Should I be tied into Home Assistant for everything?" "Is there a more complicated way to do this"?.
+
+I have an MQTT Broker set up that is running a number of things in the house. Not only do an ever growing cache of Zigbee devices use it (via the _excellent_ [zigbee2mqtt](https://www.zigbee2mqtt.io)), but I also have my Flight Tracking Raspberry Pi send its data to the Message Bus too. The other beauty is that I could decouple things from Home Assistant if I wanted, and have physical devices both respond to, and cause the status change, so it rapidly became a no brainer.
+
+Diving into the docs, it turned out that setting up a sensor that runs of MQTT is quite straightforward. Simply adding the following in my `configuration.yaml` - the default home for lots of config did the job:
 
 ```yaml
-[tower]
-localhost ansible_connection=local
-
-[database]
-
-[all:vars]
-admin_password='password'
-
-pg_host=''
-pg_port=''
-
-pg_database='awx'
-pg_username='awx'
-pg_password='password'
-
-rabbitmq_port=5672
-rabbitmq_vhost=tower
-rabbitmq_username=tower
-rabbitmq_password='password'
-rabbitmq_cookie=rabbitmqcookie
-
-# Needs to be true for fqdns and ip addresses
-rabbitmq_use_long_name=false
-# Needs to remain false if you are using localhost
+mqtt:
+# MQTT-Based Sensor to say if I'm on a call
+binary_sensor:
+  - name: Office On Air
+    unique_id: 3de52c93-5be8-46sb-5aab-rf2fe8306921
+    state_topic: 'homeassistant/office/onair'
+    payload_on: '1'
+    payload_off: '0'
+    qos: 0
+    device_class: running
 ```
 
-And a `./setup.sh` to get going. First time round there was an error thanks to `rsync` not being installed, but once I did that we had Tower up and running in a jiffy!
+The above will listen for messages on the `homeassistant/office/onair` topic, with a payload of '1' or '0' and be on or off depending on which one is sent.
 
-[![Red Hat Tower Interface](/images/tower-dashboard.png "Ansible Tower Dashboard - a bit empty for now, but will soon get filled with playbooks.")](/images/tower-dashboard.png)
+icon_color: '#3AA2E1'
+58 162 225 100
+color: rgb(58,162,225)
 
-The plan was to get LDAP auth setup between Tower and Idm, but the siren song of [OpenShift IPI on RHEV](https://docs.openshift.com/container-platform/4.4/installing/installing_rhv/installing-rhv-default.html) was too strong, and I got a little distracted by that, but more on that another day.
+badge_color: '#44739E'
